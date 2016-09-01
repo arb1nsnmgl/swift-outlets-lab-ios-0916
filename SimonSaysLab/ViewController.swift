@@ -13,11 +13,52 @@ class ViewController: UIViewController {
     @IBOutlet weak var displayColorView: UIView!
     @IBOutlet weak var startGameButton: UIButton!
     @IBOutlet weak var winLabel: UILabel!
+    @IBOutlet weak var redBtn: UIButton!
+    @IBOutlet weak var greenBtn: UIButton!
+    @IBOutlet weak var blueBtn: UIButton!
+    @IBOutlet weak var yellowBtn: UIButton!
+    
+    @IBAction func redButton(sender: AnyObject) {
+        simonSaysGame.guessRed()
+        buttonsClicked += 1
+        print("Your guessed is: \(self.simonSaysGame.chosenColors)")
+        checkGuessedColor()
+        
+    }
+    
+    @IBAction func greenButton(sender: AnyObject) {
+        simonSaysGame.guessGreen()
+        buttonsClicked += 1
+        print("Your guessed is: \(self.simonSaysGame.chosenColors)")
+        checkGuessedColor()
+        
+    }
+    
+    @IBAction func yellowButton(sender: AnyObject) {
+        simonSaysGame.guessYellow()
+        buttonsClicked += 1
+        print("Your guessed is: \(self.simonSaysGame.chosenColors)")
+        checkGuessedColor()
+    }
+    
+    @IBAction func blueButton(sender: AnyObject) {
+        simonSaysGame.guessBlue()
+        buttonsClicked += 1
+        print("Your guessed is: \(self.simonSaysGame.chosenColors)")
+        checkGuessedColor()
+    }
+    
     var simonSaysGame = SimonSays()
     var buttonsClicked = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        winLabel.hidden = true
+        redBtn.enabled = false
+        blueBtn.enabled = false
+        greenBtn.enabled = false
+        yellowBtn.enabled = false
+        
     }
 }
 
@@ -30,6 +71,7 @@ extension ViewController {
             }, completion: nil)
         
         displayTheColors()
+        enableColoredButtons()
     }
     
     private func displayTheColors() {
@@ -47,4 +89,23 @@ extension ViewController {
                 }
         })
     }
+    
+    func checkGuessedColor() {
+        if self.simonSaysGame.chosenColors ==  self.simonSaysGame.patternToMatch {
+            simonSaysGame.wonGame()
+            winLabel.hidden = false
+            winLabel.text = "You won!"
+        } else if self.simonSaysGame.chosenColors.count >= 5 {
+            winLabel.hidden = false
+            winLabel.text = "Nope, try again."
+        }
+    }
+    
+    func enableColoredButtons() {
+        redBtn.enabled = true
+        blueBtn.enabled = true
+        greenBtn.enabled = true
+        yellowBtn.enabled = true
+    }
+    
 }

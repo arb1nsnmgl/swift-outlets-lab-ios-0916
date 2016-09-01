@@ -111,5 +111,6 @@ extension SimonSays {
     mutating func tryAgainWithTheSamePattern() {
         chosenColors.removeLast()
         // display the colors in order again to the user (up to the turn)
+        
     }
 }

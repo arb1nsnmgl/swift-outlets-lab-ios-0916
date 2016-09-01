@@ -102,13 +102,10 @@
 		5B6220A71CFE22A100E9C769 /* SimonSaysLab */ = {
 			isa = PBXGroup;
 			children = (
-				5B6220A81CFE22A100E9C769 /* AppDelegate.swift */,
+				A78940DF1D77883D00AB428F /* Supporting Files */,
 				5B6220AA1CFE22A100E9C769 /* ViewController.swift */,
 				5B6220BA1CFE22FD00E9C769 /* SimonSaysGame.swift */,
 				5B6220AC1CFE22A100E9C769 /* Main.storyboard */,
-				5B6220AF1CFE22A100E9C769 /* Assets.xcassets */,
-				5B6220B11CFE22A100E9C769 /* LaunchScreen.storyboard */,
-				5B6220B41CFE22A100E9C769 /* Info.plist */,
 			);
 			path = SimonSaysLab;
 			sourceTree = "<group>";
@@ -129,6 +126,17 @@
 				03E868D9C4A0958C4F8F1243 /* Pods_SimonSaysLabTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A78940DF1D77883D00AB428F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B6220A81CFE22A100E9C769 /* AppDelegate.swift */,
+				5B6220AF1CFE22A100E9C769 /* Assets.xcassets */,
+				5B6220B11CFE22A100E9C769 /* LaunchScreen.storyboard */,
+				5B6220B41CFE22A100E9C769 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
